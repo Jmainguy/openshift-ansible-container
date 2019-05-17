@@ -17,4 +17,5 @@ RUN chgrp -R 0 /opt \
     && chmod -R g+rwX /opt/
 RUN chmod 777 /etc/passwd
 RUN cp -r /etc/skel/. /opt
+WORKDIR /opt
 CMD ["/opt/run.sh"]
