@@ -18,4 +18,5 @@ RUN chgrp -R 0 /opt \
 RUN chmod 777 /etc/passwd
 RUN cp -r /etc/skel/. /opt
 WORKDIR /opt
+RUN sed -i "s/#host_key_checking = False/host_key_checking = False/g" /etc/ansible/ansible.cfg
 CMD ["/opt/run.sh"]
